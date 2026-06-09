@@ -1,0 +1,167 @@
+.home-page {
+  min-height: 100vh;
+
+  background: #0f0f1a;
+
+  color: white;
+}
+
+/* HERO SECTION */
+
+.hero-section {
+  height: 350px;
+
+  background:
+    linear-gradient(
+      rgba(15,15,26,0.7),
+      rgba(15,15,26,0.9)
+    ),
+    url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+
+  background-size: cover;
+
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 52px;
+
+  font-weight: 700;
+
+  margin-bottom: 20px;
+
+  color: white;
+
+  text-shadow: 0 0 20px #9333ea;
+}
+
+.hero-overlay p {
+  font-size: 18px;
+
+  color: #d4d4d8;
+
+  max-width: 700px;
+
+  margin: auto;
+}
+
+/* BOOK SECTION */
+
+.books-section {
+  padding: 50px 60px;
+}
+
+/* SECTION HEADER */
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+
+  font-weight: 700;
+
+  color: white;
+}
+
+.section-header p {
+  color: #c084fc;
+
+  font-weight: 500;
+}
+
+/* BOOK GRID */
+
+.books-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 30px;
+}
+
+/* PAGINATION */
+
+.pagination-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  margin-top: 60px;
+}
+
+.pagination-section button {
+  padding: 12px 24px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #9333ea;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.pagination-section button:hover {
+  background: #7e22ce;
+
+  box-shadow: 0 0 15px #9333ea;
+
+  transform: translateY(-2px);
+}
+
+.pagination-section button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+.pagination-section span {
+  font-size: 18px;
+
+  color: #d4d4d8;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+
+  .hero-overlay h1 {
+    font-size: 38px;
+  }
+
+  .books-section {
+    padding: 30px 20px;
+  }
+
+  .section-header {
+    flex-direction: column;
+
+    gap: 10px;
+
+    text-align: center;
+  }
+
+}

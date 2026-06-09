@@ -1,0 +1,129 @@
+
+.info-page {
+  min-height: 100vh;
+
+  background: #09090f;
+
+  color: rgb(198, 99, 251);
+}
+
+/* HERO */
+
+.info-hero {
+  text-align: center;
+
+  padding: 120px 20px 70px;
+}
+
+.info-hero h1 {
+  font-size: 58px;
+
+  margin-bottom: 18px;
+
+  font-weight: 800;
+
+  text-shadow:
+    0 0 20px rgba(147,51,234,0.35);
+}
+
+.info-hero p {
+  color: #a1a1aa;
+
+  font-size: 20px;
+}
+
+/* CONTENT */
+
+.info-content {
+  display: flex;
+
+  justify-content: center;
+
+  padding: 0 20px 80px;
+}
+
+/* CARD */
+
+.info-card {
+  max-width: 850px;
+
+  width: 100%;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 28px;
+
+  padding: 45px;
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 0 30px rgba(0,0,0,0.25);
+}
+
+.info-card h2 {
+  margin-bottom: 20px;
+
+  font-size: 16px;
+}
+
+.info-card p {
+  color: #d4d4d8;
+
+  line-height: 1.9;
+
+  font-size: 14px;
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 768px) {
+
+  .info-hero h1 {
+    font-size: 22px;
+  }
+
+  .info-card {
+    padding: 30px;
+  }
+
+}
+.info-card h2 {
+  margin-top: 40px;
+
+  margin-bottom: 18px;
+
+  font-size: 22px;
+
+  color: white;
+}
+
+.quote {
+  display: block;
+
+  margin-top: 10px;
+
+  color: #c084fc;
+
+  font-style: italic;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  text-shadow:
+    0 0 12px rgba(192,132,252,0.25);
+}
+.effective-date {
+  color: #c084fc;
+
+  font-weight: 600;
+
+  margin-bottom: 30px;
+
+  font-size: 16px;
+}

@@ -1,0 +1,325 @@
+.recommend-page {
+  min-height: 100vh;
+
+  background: #0f0f1a;
+
+  color: white;
+}
+
+/* HERO */
+
+.recommend-hero {
+  padding: 100px 20px 70px;
+
+  text-align: center;
+}
+
+.recommend-hero h1 {
+  font-size: 50px;
+
+  letter-spacing: -1px;
+
+  font-weight: 800;
+
+  margin-bottom: 20px;
+
+  color: #f5f3ff;
+
+  text-shadow:
+    0 0 10px rgba(192,132,252,0.5),
+    0 0 25px rgba(147,51,234,0.45),
+    0 0 45px rgba(126,34,206,0.35);
+}
+
+.recommend-hero p {
+  color: #a1a1aa;
+
+  font-size: 18px;
+
+  max-width: 700px;
+
+  margin: auto;
+
+  line-height: 1.8;
+}
+
+/* SEARCH */
+
+.recommend-search {
+  margin-top: 45px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 16px;
+
+  flex-wrap: wrap;
+}
+
+.recommend-search input {
+  width: 550px;
+
+  max-width: 90vw;
+
+  padding: 17px 24px;
+
+  border-radius: 16px;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  background: #181825;
+
+  color: white;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition: 0.3s ease;
+}
+
+.recommend-search input:focus {
+  border:
+    1px solid #9333ea;
+
+  box-shadow:
+    0 0 25px rgba(147,51,234,0.35);
+}
+
+.recommend-search button {
+  padding: 17px 30px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #9333ea,
+      #7e22ce
+    );
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.recommend-search button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 20px rgba(147,51,234,0.45);
+}
+
+/* CONTENT */
+
+.recommend-content {
+  padding: 0 60px 40px;
+}
+
+/* FEATURED BOOK */
+
+.featured-book-section h2 {
+  font-size: 34px;
+
+  margin-bottom: 35px;
+
+  text-align: center;
+}
+
+.featured-book-wrapper {
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 90px;
+}
+
+.featured-book-card {
+  display: flex;
+
+  gap: 35px;
+
+  align-items: center;
+
+  background:
+    rgba(24,24,37,0.85);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 28px;
+
+  padding: 35px;
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.4);
+
+  max-width: 950px;
+
+  width: 100%;
+}
+
+.featured-book-card img {
+  width: 250px;
+
+  border-radius: 20px;
+
+  object-fit: cover;
+
+  box-shadow:
+    0 0 30px rgba(147,51,234,0.3);
+}
+
+/* INFO */
+
+.featured-book-info {
+  flex: 1;
+}
+
+.featured-tag {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  padding: 8px 16px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(147,51,234,0.18);
+
+  border:
+    1px solid rgba(192,132,252,0.3);
+
+  color: #e9d5ff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.featured-book-info h1 {
+  font-size: 46px;
+
+  margin-bottom: 15px;
+
+  line-height: 1.2;
+}
+
+.featured-book-info p {
+  color: #a1a1aa;
+
+  font-size: 20px;
+
+  margin-bottom: 25px;
+}
+
+.featured-rating {
+  width: fit-content;
+
+  padding: 10px 18px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(147,51,234,0.18);
+
+  color: #f3e8ff;
+
+  font-weight: 700;
+}
+
+/* RECOMMEND ROW */
+
+.recommend-title-row h2 {
+  font-size: 34px;
+
+  margin-bottom: 35px;
+}
+
+.recommend-scroll-row {
+  display: flex;
+
+  gap: 28px;
+
+  overflow-x: auto;
+
+  padding-bottom: 20px;
+
+  scroll-behavior: smooth;
+}
+
+.recommend-scroll-row::-webkit-scrollbar {
+  height: 4px;
+}
+
+.recommend-scroll-row::-webkit-scrollbar-thumb {
+  background:
+    rgba(147,51,234,0.55);
+
+  border-radius: 20px;
+}
+
+.recommend-scroll-item {
+  flex-shrink: 0;
+}
+
+/* EMPTY */
+
+.recommend-empty {
+  margin-top: 100px;
+
+  text-align: center;
+}
+
+.recommend-empty h3 {
+  font-size: 34px;
+
+  margin-bottom: 15px;
+}
+
+.recommend-empty p {
+  color: #a1a1aa;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 900px) {
+
+  .featured-book-card {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .featured-book-card img {
+    width: 220px;
+  }
+
+  .featured-book-info h1 {
+    font-size: 34px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .recommend-hero h1 {
+    font-size: 44px;
+  }
+
+  .recommend-content {
+    padding: 0 25px 60px;
+  }
+
+}
