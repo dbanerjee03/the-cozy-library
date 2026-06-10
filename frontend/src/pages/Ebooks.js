@@ -147,7 +147,7 @@ return (
         `url(${process.env.PUBLIC_URL}/hero-library.jpg)`
     }}
   >
-    <div className="hero-overlay">
+    <div className="hero-overlay1">
 
       <span className="hero-tag">
          Cozy Ebook Library
