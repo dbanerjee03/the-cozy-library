@@ -35,10 +35,10 @@ def search_books(
 
     #Save history only if logged in 
     if current_user:
-        for books in books:
+        for book in books:
             history=database_models.SearchHistory(
                 user_id=current_user.id,
-                book_id=books.isbn
+                book_id=book.isbn
             )
             db.add(history)
         db.commit()
