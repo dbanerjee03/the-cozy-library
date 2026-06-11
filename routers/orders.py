@@ -51,9 +51,9 @@ def purchase_book(
     db.commit()
     db.refresh(new_order)
 
-    #Sending Email
+    # Sending Email
     email_books = [
-    {
+    {  
         "title": book.book_title,
         "author": book.book_author,
         "price": book.price,
@@ -61,18 +61,20 @@ def purchase_book(
     }
 ]
 
-    send_order_email(
-        current_user.email,
-        email_books,
-        book.price,
-        [new_order.id]
-        )
+    try:
+        send_order_email(
+            current_user.email,
+            email_books,
+            book.price,
+            [new_order.id]
+    )
+    except Exception as e:
+        print(f"Email failed: {e}")
 
     return {
-        "message":"Thank You for Ordering.Payment successful. Your order placed successfully ",
-        "order_id":new_order.id
-    }
-
+        "message": "Thank You for Ordering. Payment successful. Your order placed successfully",
+        "order_id": new_order.id
+}
 @router.get("/orders")
 
 def get_orders(
