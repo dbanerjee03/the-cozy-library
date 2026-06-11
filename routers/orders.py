@@ -218,17 +218,15 @@ def checkout_cart(
 
     # SEND SINGLE EMAIL
 
-    send_order_email(
-
-        current_user.email,
-
-        email_books,
-
-        total_price,
-
-        created_orders
-
+    try:
+        send_order_email(
+            current_user.email,
+            email_books,
+            total_price,
+            created_orders
     )
+    except Exception as e:
+        print(f"Email failed: {e}")
 
     return {
 
