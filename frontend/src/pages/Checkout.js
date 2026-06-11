@@ -108,24 +108,45 @@ const buyNowBook =
 
   const placeOrder = async () => {
 
-    if (!address || !phone) {
+  if (!address || !phone) {
 
-      toast.error(
-        "Please fill all details"
+    toast.error(
+      "Please fill all details"
+    );
+
+    return;
+
+  }
+
+  try {
+
+    setPlacingOrder(true);
+
+    const token =
+      localStorage.getItem("token");
+
+    let response;
+
+    if (buyNowBook) {
+
+      response = await API.post(
+
+        `/purchase/${buyNowBook.isbn || buyNowBook.ISBN}`,
+
+        {},
+
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`
+          }
+        }
+
       );
 
-      return;
+    } else {
 
-    }
-
-    try {
-
-      setPlacingOrder(true);
-
-      const token =
-        localStorage.getItem("token");
-
-      const response = await API.post(
+      response = await API.post(
 
         "/checkout",
 
@@ -140,27 +161,32 @@ const buyNowBook =
 
       );
 
-      toast.success(
-        response.data.message
-      );
-
-      navigate("/orders");
-
-    } catch (error) {
-
-      console.log(error);
-
-      toast.error(
-        "Checkout failed"
-      );
-
-    } finally {
-
-      setPlacingOrder(false);
-
     }
 
-  };
+    toast.success(
+      response.data.message
+    );
+
+    navigate("/orders");
+
+  } catch (error) {
+
+  console.log(error);
+
+  console.log(error.response);
+
+  toast.error(
+    error.response?.data?.detail ||
+    "Checkout failed"
+  );
+
+} finally {
+
+    setPlacingOrder(false);
+
+  }
+
+};
 
   return (
 

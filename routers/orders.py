@@ -52,11 +52,21 @@ def purchase_book(
     db.refresh(new_order)
 
     #Sending Email
-    send_order_email(current_user.email,
-                     book.book_title,
-                     book.price,
-                     new_order.id,
-                     book.img_url_m)
+    email_books = [
+    {
+        "title": book.book_title,
+        "author": book.book_author,
+        "price": book.price,
+        "image_url": book.img_url_m
+    }
+]
+
+    send_order_email(
+        current_user.email,
+        email_books,
+        book.price,
+        [new_order.id]
+        )
 
     return {
         "message":"Thank You for Ordering.Payment successful. Your order placed successfully ",

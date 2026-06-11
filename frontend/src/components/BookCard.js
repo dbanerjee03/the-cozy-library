@@ -51,7 +51,7 @@ function BookCard({
 
   /* BUY FUNCTION */
 
-  const handleBuy = (e) => {
+  const handleBuy = async (e) => {
 
   e.stopPropagation();
 
@@ -67,16 +67,13 @@ function BookCard({
     return;
 
   }
+  console.log(book);
 
-  navigate("/checkout", {
+  const response = await API.post(
+  `/cart/${book.isbn || book.ISBN}`
+);
 
-    state: {
-
-      book: book
-
-    }
-
-  });
+navigate("/checkout");
 
 };
 

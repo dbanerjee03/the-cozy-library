@@ -63,10 +63,33 @@ def get_random_books(
 #Top 50 books section api
 @router.get("/books/top50")
 def top50_books(
-    limit:int=50,
-    db:Session=Depends(get_db)
+    limit: int = 50,
+    db: Session = Depends(get_db)
 ):
-    books=get_top50_books()
+
+    books = get_top50_books()
+
+    for book in books:
+
+        db_book = db.query(
+            database_models.Books
+        ).filter(
+            database_models.Books.isbn ==
+            book["ISBN"]
+        ).first()
+
+        if db_book:
+
+            book["price"] = (
+                float(db_book.price)
+                if db_book.price
+                else 0
+            )
+
+        else:
+
+            book["price"] = 0
+
     return books
 
 #search suggestions api
