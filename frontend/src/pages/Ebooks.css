@@ -61,7 +61,7 @@
 
 }
 
-.hero-overlay h1 {
+.hero-overlay1 h1 {
 
   font-size: 72px;
 
@@ -75,7 +75,7 @@
 
 }
 
-.hero-overlay p {
+.hero-overlay1 p {
 
   max-width: 650px;
 
@@ -266,22 +266,48 @@
 }
 @media screen and (max-width: 768px) {
 
-  .hero-overlay {
-
-    padding: 30px;
-
+  .ebooks-container {
+    padding: 20px;
   }
 
-  .hero-overlay h1 {
+  .ebooks-hero {
+    height: auto;
+    min-height: 320px;
+    border-radius: 20px;
+  }
 
+  .hero-overlay1 {
+    padding: 30px 20px;
+  }
+
+  .hero-overlay1 h1 {
     font-size: 36px;
-
+    line-height: 1.2;
   }
 
-  .hero-overlay p {
-
+  .hero-overlay1 p {
     font-size: 15px;
+    line-height: 1.6;
+  }
 
+  .hero-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+@media screen and (max-width: 480px) {
+
+  .hero-overlay1 h1 {
+    font-size: 28px;
+  }
+
+  .hero-overlay1 p {
+    font-size: 14px;
+  }
+
+  .hero-tag {
+    font-size: 13px;
   }
 
 }

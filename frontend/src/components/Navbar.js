@@ -563,6 +563,24 @@ if (logoutLoading) {
       ? "active-tab"
       : ""
   }
+
+  onClick={(e) => {
+
+    const token =
+      localStorage.getItem("token");
+
+    if (!token) {
+
+      e.preventDefault();
+      playToastSound();
+
+      toast.error(
+        "Please login first 💜"
+      );
+
+    }
+
+  }}
 >
   Ebooks
 </Link>
