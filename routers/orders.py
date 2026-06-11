@@ -52,24 +52,7 @@ def purchase_book(
     db.refresh(new_order)
 
     # Sending Email
-    email_books = [
-    {  
-        "title": book.book_title,
-        "author": book.book_author,
-        "price": book.price,
-        "image_url": book.img_url_m
-    }
-]
-
-    try:
-        send_order_email(
-            current_user.email,
-            email_books,
-            book.price,
-            [new_order.id]
-    )
-    except Exception as e:
-        print(f"Email failed: {e}")
+    print("Email disabled")
 
     return {
         "message": "Thank You for Ordering. Payment successful. Your order placed successfully",
@@ -218,16 +201,7 @@ def checkout_cart(
 
     # SEND SINGLE EMAIL
 
-    try:
-        send_order_email(
-            current_user.email,
-            email_books,
-            total_price,
-            created_orders
-    )
-    except Exception as e:
-        print(f"Email failed: {e}")
-
+    print("Email disabled")
     return {
 
         "message":
