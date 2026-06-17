@@ -53,16 +53,21 @@ function Orders() {
         localStorage.getItem("token");
 
       const response = await API.get(
-        "/orders",
-        {
-          headers: {
-            Authorization:
-              `Bearer ${token}`
-          }
-        }
-      );
+  "/orders",
+  {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+);
 
-      setOrders(response.data);
+console.log("ORDERS API:", response.data);
+
+setOrders(
+  [...response.data].sort(
+    (a, b) => b.id - a.id
+  )
+);
 
     } catch (error) {
 
@@ -75,6 +80,17 @@ function Orders() {
     }
 
   };
+  const getDeliveryDate = (orderDate) => {
+  const date = new Date(orderDate);
+  date.setDate(date.getDate() + 2);
+
+  return date.toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+};
+console.log("Orders State:", orders);
 
   return (
 
@@ -172,11 +188,14 @@ function Orders() {
                     {/* STATUS */}
 
                     <div className="delivered-badge">
-
-                      ✅ Delivered
-
-                    </div>
-
+  {new Date() > new Date(
+    new Date(order.order_date).setDate(
+      new Date(order.order_date).getDate() + 2
+    )
+  )
+    ? "✅ Delivered"
+    : `🚚 Delivery by ${getDeliveryDate(order.order_date)}`}
+</div>
                     {/* BUTTON */}
 
                     <Link
