@@ -69,11 +69,13 @@ def get_orders(
 ):
 
     orders = db.query(
-        database_models.Orders
-    ).filter(
-        database_models.Orders.user_id ==
-        current_user.id
-    ).all()
+    database_models.Orders
+).filter(
+    database_models.Orders.user_id ==
+    current_user.id
+).order_by(
+    database_models.Orders.order_date.desc()
+).all()
 
     order_response = []
 
@@ -202,6 +204,7 @@ def checkout_cart(
     # SEND SINGLE EMAIL
 
     print("Email disabled")
+
     return {
 
         "message":
